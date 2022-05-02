@@ -1,0 +1,77 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+     "width=device-width,initial-scale=1.0">
+  
+     <!-- 1. Planteamiento del problema
+Sería Buscar códigos que nos permitan hacer ese trabajo o hacer esa función en una página web -->
+  
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" 
+        integrity=
+"sha512vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" 
+        crossorigin="anonymous">
+    </script>
+  
+    <style>
+        .heading{
+          text-align: center;
+          color: #0d110e;
+        }
+    </style>
+</head>
+  
+<body>
+    <h2 class="heading">
+      laborarorio de logica semana 12 
+    </h2>
+    <h2 class="heading">Consiste la resolución de problemas</h2>
+    <p class="heading">Una persona nos pide que hagamos una lista desplegable y que escoja una opcion  y que guarde en pdf
+        (esto es el problema)</p>
+  
+    
+    <form id ="form-print" enctype="text/plain" 
+          class="form-control">
+  <!--  2. Análisis básico de la solución
+Lo que haré será hacer una lista desplegable más un botón qué al cual genere un pdf -->
+         <center>
+  
+        <label for="subject">
+          <strong>Seleccionar producto: </strong>
+        </label>
+        <select class="form-control" 
+            id="subject" name="subject">
+            <option value="Web">
+                cocacola
+            </option>
+            <option value="App">
+                pepsi 
+            </option>
+            <option value="Others">
+                big cola 
+            </option>
+        </select>
+        
+  
+        <input type="button" class="btn btn-primary" 
+          onclick="GeneratePdf();" value="GeneratePdf">
+        </center>
+    </form>
+                   
+    <script>          
+        
+        function GeneratePdf() {
+            var element = document.getElementById('form-print');
+            html2pdf(element);
+        }
+      
+    </script>
+  <!-- 5. Documentación interna y externa
+Este apartado se Comenta o se describe dentro del programa cosas significativas para el programador -->
+  <p class="heading">Validación de diseño
+    Esta parte revisamos si el programa funciona con los requerimientos del usuario</p>
+</body>
+  
+</html>
